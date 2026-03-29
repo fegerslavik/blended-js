@@ -3,7 +3,11 @@
 // // квадрати кожного елементу вхідного масиву.
 // // Очікуваний результат: [1, 4, 9, 16, 25].
 
-// const numbers = [1, 2, 3, 4, 5]
+// const numbers = [1, 2, 3, 4, 5];
+//const newArray = numbers.map(num => num * num);
+// const powNumber = (array, pow) => array.map(number => Math.pow(number, pow));
+// console.log(newArray);
+// console.log(powNumber(numbers, 2));
 
 // // Завдання 2:
 // // Дано масив об'єктів. Створіть новий масив, що містить всі значення
@@ -11,10 +15,13 @@
 // // Очікуваний результат: [1, 2, 3, 4, 5, 6, 7, 8, 9].
 
 // const data = [
-//  { id: 1, values: [1, 2, 3] },
-//  { id: 2, values: [4, 5, 6] },
-//  { id: 3, values: [7, 8, 9] },
+//   { id: 1, values: [1, 2, 3] },
+//   { id: 2, values: [4, 5, 6] },
+//   { id: 3, values: [7, 8, 9] },
 // ];
+// const newArray = data.flatMap(object => object.values);
+// const newFlatArray = array => array.flatMap(object => object.values);
+// console.log(newFlatArray(data));
 
 // // Завдання 3
 // // Дано масив об'єктів.
@@ -22,27 +29,46 @@
 // // Очікуваний результат: true.
 
 // const people = [
-//  { name: 'John', age: 27 },
-//  { name: 'Jane', age: 31 },
-//  { name: 'Bob', age: 19 },
+//   { name: 'John', age: 27 },
+//   { name: 'Jane', age: 31 },
+//   { name: 'Bob', age: 19 },
 // ];
+
+// const isAdult = people.some(person => person.age < 20);
+// const checkAge = (array, Age) => array.checkAge(person => person.age < 20);
+// console.log(isAdult);
+// console.log(checkAge(people, 20));
 
 // Завдання 4
 // Дано масив чисел [2, 4, 6, 8, 10].
 // Перевірте, чи є кожен елемент масиву парним. Очікуваний результат: true.
 
 // const numbers = [2, 4, 6, 8, 10];
+// const everyNumbers = numbers.every(number => {
+//   console.log(number);
+//   return number % 2 === 0;
+// });
+// const checkItem = (array, num) => array.every(number => number % num === 0);
+// console.log(everyNumbers);
+// console.log(checkItem(numbers, 2));
 
 // Завдання 5
 // Знайдіть перше непарне число
 
 // const numbers = [2, 1, 6, 8, 9, 10, 12];
+// const result = numbers.find(num => num % 2 !== 0);
+// const checkItem = (array, number) => array.find(num => num % number !== 0);
+// console.log(result);
+// console.log(checkItem(numbers, 2));
 
 // Завдання 6
 // Відсортуйте масив чисел [4, 2, 5, 1, 3]
 // у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
 
 // const numbersArray = [4, 2, 5, 1, 3];
+// const sortedArray = numbersArray.toSorted((a, b) => a - b);
+// const sortArray = arr => arr.toSorted((a, b) => a - b);
+// console.log(sortArray(numbersArray));
 
 // Завдання 7
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"]
@@ -50,6 +76,10 @@
 // Очікуваний результат: ["apple", "banana", "orange", "pear"].
 
 // const stringArray = ['banana', 'orange', 'apple', 'pear'];
+// const sortedArray = stringArray.toSorted((a, b) => a.localeCompare(b));
+// console.log(sortedArray);
+// const sortArray = arr => arr.toSorted((a, b) => a.localeCompare(b));
+// console.assert.log(sortArray(stringArray));
 
 // Завдання 8
 //  Відсортуйте масив об'єктів за віком у порядку зростання.
@@ -60,6 +90,11 @@
 //   { name: 'Jane', age: 31 },
 //   { name: 'Bob', age: 19 },
 // ];
+
+// const sortedArray = users.toSorted((a, b) => a.age - b.age);
+// console.log(sortedArray);
+// const sortArray = arr => arr.toSorted((a, b) => a.age - b.age);
+// console.log(sortArray(users));
 
 // Завдання 9
 // Дано масив об'єктів.
@@ -73,20 +108,54 @@
 //   { name: 'Bob', age: 19 },
 // ];
 
+// const maxAge = user.filter(person => person.age > 20);
+// console.log(maxAge);
+// const newArray = arr => arr.filter(person => person.age > 20);
+// console.log(newArray(user));
+
 // Завдання 10
 // Дано масив чисел [1, 2, 3, 4, 5].
 // Застосуйте метод для обчислення суми елементів масиву.
 
 // const numbers = [1, 2, 3, 4, 5];
+// const sum = numbers.reduce((total, num) => total + num, 0);
+// const newArray = arr => arr.reduce((total, num) => total + num, 0);
+// console.log(sum);
+// console.log(newArray(numbers, 0));
 
 // Завдання 11
 // Розроби клас Calculator, який дозволяє виконувати арифметичні
 //  операції над числом за допомогою методів класу, підтримуючи
 // ланцюжковий виклик (method chaining).
 //
-// Вимоги до класу Calculator
-// - Метод number(value)
-// Встановлює початкове значення для наступних обчислень.
+// class Calculator {
+//   constructor() {
+//     this.value = value;
+//     return this;
+//   }
+//   getResult() {
+//     return this.value;
+//   }
+//   add(value) {
+//     this.value += value;
+//     return this;
+//   }
+//   subtract(value) {
+//     this.value -= value;
+//     return this;
+//   }
+//   multiply(value) {
+//     this.value *= value;
+//     return this;
+//   }
+//   divide(value) {
+//     if (!value) {
+//       return this;
+//     }
+//     this.value /= value;
+//     return this;
+//   }
+// }
 // Повертає сам об'єкт (this) для підтримки ланцюжкових викликів.
 // - метод getResult, Повертає поточний результат усіх операцій.
 // Не змінює значення, просто повертає його.
@@ -101,8 +170,7 @@
 // Приклад використання:
 // const calc = new Calculator();
 
-// const result = calc
-//   .number(10)   // Встановлюємо початкове значення 10
+// const result = calc.number(10); // Встановлюємо початкове значення 10
 //   .add(5)       // Додаємо 5 (10 + 5 = 15)
 //   .subtract(3)  // Віднімаємо 3 (15 - 3 = 12)
 //   .multiply(4)  // Множимо на 4 (12 * 4 = 48)
@@ -115,6 +183,25 @@
 // Напиши клас Client який створює об'єкт з властивостями login email.
 // Оголоси приватні властивості #login #email, доступ до яких зроби
 // через геттер та сеттер login email
+// class Client {
+//     #login;
+//     #email;
+
+//     get login() {
+//         return this.#login;
+//     }
+
+//     set login(newLogin) {
+//         this.#login - newLogin;
+//     }
+
+//     get email() {
+//         return this.#email;
+//     }
+// }
+// const Client = new Client();
+// client.login = "admin";
+// console.log(Client);
 
 // Завдання 13
 //  Наслідування у класах!
@@ -133,3 +220,66 @@
 //  - salary - зарплата співробітника;
 //  - department - відділ, в якому працює співробітник.
 // Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який повертає об'єкт з зарплатою співробітника та відділом, в якому він працює.
+// class Person {
+//   constructor({ name, age, gender, email }) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+//     this.email = email;
+//   }
+//   getDetails() {
+//     return {
+//       name: this.name,
+//       age: this.age,
+//       gender: this.gender,
+//       email: this.email,
+//     };
+//   }
+// }
+
+// class Employee extends Person {
+//   constructor(data) {
+//     super(data);
+//     this.salary = data.salary;
+//     this.department = data.department;
+//   }
+
+//   getEmployeeDetails() {
+//     return {
+//       salary: this.salary,
+//       department: this.department,
+//     };
+//   }
+// }
+
+// const data = {
+//   name: 'Polly',
+//   age: 18,
+//   gender: 'Female',
+//   email: 'polly@gmail.com',
+//   salary: 50,
+//   department: 'developer',
+// };
+// const person = new Employee(data);
+
+// console.log(person.getDetails());
+// console.log(person.getEmployeeDetails());
+
+//Додаткове
+//Підрахунок кількості повторень
+//Дано масив:
+// const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+// //Завдання: За допомогою reduce підрахуйте, скільки разів кожен фрукт зустрічається в масиві.
+// //Очікуваний результат:
+// //{
+//  // apple: 3,
+//  // banana: 2,
+//  // orange: 1
+// //}
+// const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+// const obj = fruits.reduce((acc, fruit) => {
+//   acc[fruit] = (acc[fruit] || 0) + 1;
+//   return acc;
+// }, {});
+
+// console.log(obj);
